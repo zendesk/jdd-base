@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>JDD Fun - Base</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+
+    <script>
+        $(document).ready(function(){
+            $("#getMessage").click(function(){
+                $.ajax({
+                   url: "/message",
+                   dataType: 'text',
+                   cache: false,
+
+                   success: function (data) {
+                       $("#tweetText").html(data);
+                       $("#tweetText").css('color', 'black');
+
+                       //hack to reload properties of Tweet Button Widget
+                       $('#tweetBtn iframe').remove();
+                       var tweetBtn = $('<a></a>')
+                               .addClass('twitter-share-button')
+                               .attr('href', 'http://twitter.com/share')
+                               .attr('data-url', 'http://www.getbase.com')
+                               .attr('data-size', 'large')
+                               .attr('data-count', 'none')
+                               .attr('data-related', 'getbaselab')
+                               .attr('data-text', data);
+                       $('#tweetBtn').append(tweetBtn);
+                       twttr.widgets.load();
+
+                       $("#content").show();
+                   }
+               });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Base on JDD Conf</h1>
+            <p>Fix the serverside to get the message of the day, which you can then share on the Twitter...</p>
+            <a id="getMessage" href="#" class="btn btn-info btn-lg">Get the message of the day</a>
+        </div>
+        <div id="content" class="container" hidden="hidden">
+            <div id="tweetText" style="color: gray; font-size: 30px">No message yet...</div>
+            <div id="tweetBtn">
+                <a class="twitter-share-button" href="http://twitter.com/share" data-url="http://www.getbase.com" data-text="No message yet..." data-size="large" data-count="none">Tweet</a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

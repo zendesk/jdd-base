@@ -1,0 +1,23 @@
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+//project variables
+project.ext {
+    dropwizardVersion = '0.7.1'
+}
+
+dependencies {
+    testCompile "org.spockframework:spock-core:0.7-groovy-2.0"
+
+    compile (
+            'io.dropwizard:dropwizard-core:' + dropwizardVersion,
+            'io.dropwizard:dropwizard-assets:' + dropwizardVersion,
+            'org.twitter4j:twitter4j-core:4.0.2'
+    )
+}
