@@ -9,5 +9,4 @@ List of included technologies:
 * [Spock](https://code.google.com/p/spock/) for testing
 
 ## How to run the app?
-To run the app execute the main class TweetMeApplication, passing the "server" as
-an argument and then open http://localhost:8080/app
+To run the app execute `./gradlew run` and then open http://localhost:8080/app
