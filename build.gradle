@@ -1,7 +1,9 @@
 apply plugin: 'java'
+apply plugin: 'application'
 
 sourceCompatibility = 1.8
 version = '1.0'
+mainClassName = 'com.getbase.tweetme.TweetMeApplication'
 
 repositories {
     mavenCentral()
@@ -20,4 +22,8 @@ dependencies {
             'io.dropwizard:dropwizard-assets:' + dropwizardVersion,
             'org.twitter4j:twitter4j-core:4.0.2'
     )
+}
+
+run {
+    args 'server'
 }
