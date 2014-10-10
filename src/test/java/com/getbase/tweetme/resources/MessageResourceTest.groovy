@@ -9,7 +9,8 @@ class MessageResourceTest extends spock.lang.Specification {
         given: "instance of resource created"
         def resource = new MessageResource();
 
-        expect: "it returns non-empty message of the day"
-        resource.getMessage() && resource.getMessage().trim()
+        expect: "it returns the proper message"
+        resource.getMessage() &&
+                resource.getMessage() == "Coding in modern Java stack with @getbaselab at #jdd_krakow Cc. @jdd_krakow"
     }
 }

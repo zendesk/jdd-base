@@ -14,7 +14,7 @@ public class MessageResource {
 
     @GET
     public String getMessage() {
-        return "Hello from JDD conference!";
+        return "Coding in modern Java stack with @getbaselab at #jdd_krakow Cc. @jdd_krakow";
     }
 
 }
