@@ -1,6 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'application'
 apply plugin: 'com.github.johnrengelman.shadow'
+apply plugin: 'groovy'
 
 sourceCompatibility = 1.8
 version = '1.0'
@@ -23,7 +24,11 @@ project.ext {
 }
 
 dependencies {
-    testCompile "org.spockframework:spock-core:0.7-groovy-2.0"
+    testCompile (
+            'org.spockframework:spock-core:0.7-groovy-2.0',
+            'org.codehaus.groovy:groovy-all:2.3.6',
+            'org.codehaus.groovy.modules.http-builder:http-builder:0.7+'
+    )
 
     compile (
             'io.dropwizard:dropwizard-core:' + dropwizardVersion,

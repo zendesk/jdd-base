@@ -9,7 +9,7 @@ import javax.ws.rs.core.MediaType;
  * Created by pawel on 07/10/14.
  */
 @Path("/message")
-@Produces(MediaType.APPLICATION_JSON)
+@Produces(MediaType.TEXT_PLAIN)
 public class MessageResource {
 
     @GET
