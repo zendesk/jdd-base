@@ -40,3 +40,9 @@ dependencies {
 run {
     args 'server'
 }
+
+test {
+    testLogging {
+        exceptionFormat = 'full'
+    }
+}
