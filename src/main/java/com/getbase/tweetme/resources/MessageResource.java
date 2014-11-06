@@ -1,5 +1,6 @@
 package com.getbase.tweetme.resources;
 
+import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
@@ -7,12 +8,13 @@ import javax.ws.rs.core.MediaType;
 /**
  * Created by pawel on 07/10/14.
  */
-@Path("/")
+@Path("/message")
 @Produces(MediaType.TEXT_PLAIN)
 public class MessageResource {
 
+    @GET
     public String getMessage() {
-        return null;
+        return "Coding in modern Java stack with @getbaselab at #jdd_krakow Cc. @jdd_krakow";
     }
 
 }
