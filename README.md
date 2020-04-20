@@ -11,3 +11,9 @@ JDD-Base application is missing some implementation. Your task is to make all te
 
 ## Got stuck?
 Check out the [Dropwizard documentation](http://dropwizard.io/getting-started.html#creating-a-resource-class) to learn how to code a RESTfull resource.
+
+## Copyright and license
+
+Copyright 2020 Zendesk
+
+Licensed under the [Apache License, Version 2.0](LICENSE)
