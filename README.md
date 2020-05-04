@@ -14,6 +14,6 @@ Check out the [Dropwizard documentation](http://dropwizard.io/getting-started.ht
 
 ## Copyright and license
 
-Copyright 2020 Zendesk
+Copyright 2014 Zendesk
 
 Licensed under the [Apache License, Version 2.0](LICENSE)
